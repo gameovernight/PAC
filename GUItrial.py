@@ -49,6 +49,10 @@ def loadPresets():
 	root.filename = filedialog.askopenfilename(initialdir=start_file, title="Select file", filetypes=(("text files","*.txt"),("all files","*.*")));
 	displayContents(root.filename)
 
+def saveFile():
+	root.filename =  filedialog.asksaveasfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+        print (root.filename)
+	
 
 # Displays contents of file in GUI text box
 def displayContents(filename):
@@ -82,7 +86,7 @@ home_button = ttk.Button(topframe, text= "Home", command=unfinished)
 home_button.pack(padx=10,side='left')
 load_button = ttk.Button(topframe, text= "Load Preset", command=loadPresets)
 load_button.pack(padx=10,side='left')
-save_button = ttk.Button(topframe, text= "Save", command=unfinished)
+save_button = ttk.Button(topframe, text= "Save", command=saveFile)
 save_button.pack(padx=10,side='left')
 
 
